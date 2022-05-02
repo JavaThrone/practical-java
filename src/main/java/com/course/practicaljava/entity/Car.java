@@ -1,6 +1,9 @@
 package com.course.practicaljava.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.time.LocalDate;
+import java.util.List;
 
 public class Car {
 
@@ -14,7 +17,14 @@ public class Car {
 
     private boolean available;
 
+    @JsonFormat(pattern = "dd-MMM-yyyy")
     private LocalDate firstReleaseDate;
+
+    private Engine engine;
+
+    private List<Tire> tires;
+
+    private List<String> additionalFeatures;
 
     public Car() {
     }
@@ -74,6 +84,30 @@ public class Car {
         this.firstReleaseDate = firstReleaseDate;
     }
 
+    public Engine getEngine() {
+        return engine;
+    }
+
+    public void setEngine(Engine engine) {
+        this.engine = engine;
+    }
+
+    public List<Tire> getTires() {
+        return tires;
+    }
+
+    public void setTires(List<Tire> tires) {
+        this.tires = tires;
+    }
+
+    public List<String> getAdditionalFeatures() {
+        return additionalFeatures;
+    }
+
+    public void setAdditionalFeatures(List<String> additionalFeatures) {
+        this.additionalFeatures = additionalFeatures;
+    }
+
     @Override
     public String toString() {
         return "Car{" +
@@ -83,6 +117,9 @@ public class Car {
             ", price=" + price +
             ", available=" + available +
             ", firstReleaseDate=" + firstReleaseDate +
+            ", engine=" + engine +
+            ", tires=" + tires +
+            ", additionalFeatures=" + additionalFeatures +
             '}';
     }
 }
