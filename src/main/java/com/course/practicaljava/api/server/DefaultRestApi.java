@@ -10,18 +10,18 @@ import org.springframework.web.bind.annotation.RestController;
 import java.time.LocalTime;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping(value = "/api")
 public class DefaultRestApi {
 
     private Logger log = LoggerFactory.getLogger(DefaultRestApi.class);
 
-    @GetMapping("/welcome")
+    @GetMapping(value = "/welcome")
     public String welcome() {
         log.info(StringUtils.join("Hello", " this is", " String boot", " REST API!!!"));
         return "Welcome to Spring Boot";
     }
 
-    @GetMapping("/time")
+    @GetMapping(value = "/time")
     public String time() {
         return LocalTime.now().toString();
     }

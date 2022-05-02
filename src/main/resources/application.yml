@@ -1,3 +1,10 @@
+logging:
+  pattern:
+    console: "[Practical Java] %d{yyyy-MM-dd HH:mm:ss} | %-5level | %logger{1.} | %msg%n"
+    file: "[Practical Java] %d{yyyy-MM-dd HH:mm:ss} | %-5level | %logger{1.} | %msg%n"
+  file:
+    name: log/practical-java.log
+
 spring:
   main:
     banner-mode: off
