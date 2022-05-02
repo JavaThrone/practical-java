@@ -4,7 +4,7 @@ import com.course.practicaljava.entity.Car;
 import com.course.practicaljava.entity.Engine;
 import com.course.practicaljava.entity.Tire;
 import org.springframework.stereotype.Service;
-import util.RandomDateUtil;
+import com.course.practicaljava.util.RandomDateUtil;
 
 import java.util.ArrayList;
 import java.util.concurrent.ThreadLocalRandom;

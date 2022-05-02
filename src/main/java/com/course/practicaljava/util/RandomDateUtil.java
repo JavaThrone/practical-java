@@ -1,4 +1,4 @@
-package util;
+package com.course.practicaljava.util;
 
 import java.time.LocalDate;
 import java.time.Month;

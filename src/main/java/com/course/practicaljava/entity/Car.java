@@ -1,11 +1,20 @@
 package com.course.practicaljava.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.elasticsearch.annotations.DateFormat;
+import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.data.elasticsearch.annotations.Field;
+import org.springframework.data.elasticsearch.annotations.FieldType;
 
 import java.time.LocalDate;
 import java.util.List;
 
+@Document(indexName = "practical-java")
 public class Car {
+
+    @Id
+    private String id;
 
     private String brand;
 
@@ -17,7 +26,8 @@ public class Car {
 
     private boolean available;
 
-    @JsonFormat(pattern = "dd-MMM-yyyy")
+    @Field(type = FieldType.Date, format = DateFormat.date)
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate firstReleaseDate;
 
     private Engine engine;
@@ -34,6 +44,14 @@ public class Car {
         this.brand = brand;
         this.color = color;
         this.type = type;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getBrand() {
